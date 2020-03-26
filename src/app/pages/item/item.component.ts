@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
   }

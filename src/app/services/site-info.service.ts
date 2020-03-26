@@ -13,12 +13,12 @@ export class SiteInfoService {
 
   constructor(private http: HttpClient) {
 
-    this.updateInfo();
-    this.updateTeam();
+    this.loadInfo();
+    this.loadTeam();
    }
 
 
-   updateInfo() {
+   loadInfo() {
     this.http.get('assets/data/data-page.json')
     .subscribe( (resp: SiteInfo) => {
      this.update = true;
@@ -26,11 +26,10 @@ export class SiteInfoService {
     });
    }
 
-   updateTeam() {
+  loadTeam() {
    this.http.get('https://html-project-27f55.firebaseio.com/team.json')
    .subscribe( (resp: any[]) => {
    this.team = resp;
-   console.log(resp);
    });
    }
 }
