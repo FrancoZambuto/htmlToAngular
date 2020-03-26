@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SiteInfoService } from './services/site-info.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ecommerce';
+ 
+ constructor() {
+
+}
+
 }

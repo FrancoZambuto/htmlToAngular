@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SiteInfoService } from 'src/app/services/site-info.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,7 +11,7 @@ export class FooterComponent implements OnInit {
   private year: number = new Date().getFullYear();
 
 
-  constructor() { }
+  constructor(private siteInfoService: SiteInfoService) { }
 
   ngOnInit() {
   }
