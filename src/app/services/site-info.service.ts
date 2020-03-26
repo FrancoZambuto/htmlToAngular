@@ -8,15 +8,29 @@ import { SiteInfo } from '../interfaces/site-info.interface';
 export class SiteInfoService {
 
   info: SiteInfo = {};
-  cargada = false;
+  update = false;
+  team: any[] = [];
 
   constructor(private http: HttpClient) {
-   this.http.get('assets/data/data-page.json')
-     .subscribe( (resp: SiteInfo) => {
-      this.cargada = true;
-      this.info = resp;
-      console.log(resp);
-     });
 
+    this.updateInfo();
+    this.updateTeam();
+   }
+
+
+   updateInfo() {
+    this.http.get('assets/data/data-page.json')
+    .subscribe( (resp: SiteInfo) => {
+     this.update = true;
+     this.info = resp;
+    });
+   }
+
+   updateTeam() {
+   this.http.get('https://html-project-27f55.firebaseio.com/team.json')
+   .subscribe( (resp: any[]) => {
+   this.team = resp;
+   console.log(resp);
+   });
    }
 }
