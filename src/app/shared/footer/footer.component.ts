@@ -8,10 +8,10 @@ import { SiteInfoService } from 'src/app/services/site-info.service';
 })
 export class FooterComponent implements OnInit {
 
-  private year: number = new Date().getFullYear();
+  public year: number = new Date().getFullYear();
 
 
-  constructor(private siteInfoService: SiteInfoService) { }
+  constructor(public siteInfoService: SiteInfoService) { }
 
   ngOnInit() {
   }
